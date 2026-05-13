@@ -90,9 +90,6 @@ class RegistroVotacao(models.Model):
     def __str__(self):
         return f"{self.eleitor} - {self.eleicao}"
 
-    #def __str__(self):
-    #    return f"Presença: {self.eleitor.nome} na eleição {self.eleicao.titulo}"    
-
 
 class Voto(models.Model):
     eleicao = models.ForeignKey(Eleicao, on_delete=models.PROTECT, related_name='votos') #eleição na qual o voto foi feito

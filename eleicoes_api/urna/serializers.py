@@ -1,7 +1,8 @@
 import re
 from django.utils import timezone
 from rest_framework import serializers
-from .models import Eleitor, Eleicao, Candidato, AptidaoEleitor, RegistroVotacao, Voto
+from .models import *
+from .serializers import *
 
 class EleitorSerializer(serializers.ModelSerializer):
     class Meta:
@@ -29,7 +30,7 @@ class EleicaoSerializer(serializers.ModelSerializer):
             'data_fim',
             'status', 
             'status_display',
-            'permite_branco'
+            'permite_branco',
             'criada_por',
             'total_candidatos',
             'total_aptos',
@@ -58,7 +59,7 @@ class CandidatoSerializer(serializers.ModelSerializer):
             'numero',
             'nome',
             'nome_urna',
-            'partido',
+            'partido_ou_chapa',
             'proposta',
             'foto_url',
         ]
